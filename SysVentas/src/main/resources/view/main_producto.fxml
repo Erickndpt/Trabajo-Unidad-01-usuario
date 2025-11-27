@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" stylesheets="@/css/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
+
+    <children>
+        <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+
+            <!-- ============================
+                 SECCIÓN SUPERIOR: TÍTULO + BUSCADOR
+            ============================= -->
+            <AnchorPane styleClass="panel-top">
+                <children>
+                    <Label layoutX="14" layoutY="12" text="Venta del Producto">
+                        <font>
+                            <Font name="System Bold" size="20" />
+                        </font>
+                    </Label>
+
+                    <Label layoutX="332" layoutY="48" text="Buscar Producto" />
+                    <TextField fx:id="txtFiltroDato" layoutX="332" layoutY="68" prefHeight="28" prefWidth="200" />
+
+                    <Button layoutX="540" layoutY="67" mnemonicParsing="false" styleClass="btnBuscar" text="Buscar" />
+                </children>
+            </AnchorPane>
+
+            <!-- ============================
+                 SECCIÓN DEL FORMULARIO
+            ============================= -->
+            <AnchorPane styleClass="panel-form">
+                <children>
+
+                    <!-- 🔧 GridPane corregido (padding con Insets) -->
+                    <GridPane hgap="5" vgap="5">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="120.0" />
+                            <ColumnConstraints prefWidth="150.0" />
+                            <ColumnConstraints prefWidth="120.0" />
+                     <ColumnConstraints minWidth="10.0" prefWidth="150.0" />
+                     <ColumnConstraints minWidth="10.0" prefWidth="150.0" />
+                            <ColumnConstraints prefWidth="150.0" />
+                     <ColumnConstraints prefWidth="150.0" />
+                     <ColumnConstraints prefWidth="150.0" />
+                        </columnConstraints>
+
+                        <children>
+                            <!-- TÍTULO -->
+                            <Label text="Registro del Produccto" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+                                <font>
+                                    <Font name="System Bold" size="14" />
+                                </font>
+                            </Label>
+
+                            <!-- Nombre -->
+                            <Label text="Nombre Producto" GridPane.rowIndex="1" />
+                            <TextField fx:id="txtNombreProducto" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+
+                            <!-- Precio -->
+                            <Label text="Precio Unitario S/." GridPane.rowIndex="2" />
+                            <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                            <Label text="Pre. Unit. Anterior S/." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                            <TextField fx:id="txtPUnitOld" prefHeight="26.0" prefWidth="129.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                            <!-- Utilidad -->
+                            <Label text="Ganancia" GridPane.rowIndex="3" />
+                            <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+
+                            <!-- Stock -->
+                            <Label text="Stock" GridPane.rowIndex="4" />
+                            <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                            <Label text="Stock Old" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                            <TextField fx:id="txtStockOld" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                            <!-- Combos -->
+                            <Label text="Marca" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="cbxMarca" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+
+                            <Label text="Categoria" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="cbxCategoria" prefHeight="26.0" prefWidth="114.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+
+                            <Label text="Unidad Medida" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                            <ComboBox fx:id="cbxUnidMedida" prefHeight="26.0" prefWidth="82.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+
+                            <!-- Botones -->
+                            <Button onAction="#validarFormulario" styleClass="btnGuardar" text="Guardar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+
+                            <Button onAction="#clearForm" styleClass="btnCancelar" text="Limpiar/Nuevo" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+
+                            <!-- Mensaje -->
+                            <Label fx:id="lbnMsg" style="-fx-text-fill: #444;" GridPane.columnSpan="4" GridPane.rowIndex="9" />
+                        </children>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                    </GridPane>
+
+                </children>
+            </AnchorPane>
+
+            <!-- ============================
+                 TABLA ABAJO
+            ============================= -->
+            <AnchorPane styleClass="panel-table">
+                <children>
+                    <TableView fx:id="tableView" prefHeight="300.0" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.topAnchor="5" />
+                </children>
+            </AnchorPane>
+
+        </VBox>
+    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
