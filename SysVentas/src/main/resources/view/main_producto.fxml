@@ -15,7 +15,7 @@
             ============================= -->
             <AnchorPane styleClass="panel-top">
                 <children>
-                    <Label layoutX="14" layoutY="12" text="Venta del Producto">
+                    <Label layoutX="14" layoutY="12" text="Registro del Producto">
                         <font>
                             <Font name="System Bold" size="20" />
                         </font>

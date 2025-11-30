@@ -82,7 +82,7 @@
                     </children>
                 </GridPane>
             </children></AnchorPane>
-        <Label layoutX="105.0" layoutY="178.0" text="Iniciar Seción" textFill="#3a3a3a">
+        <Label layoutX="84.0" layoutY="178.0" text="Sistema de Ventas" textFill="#3a3a3a">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
